@@ -2,9 +2,35 @@
   background-color: var(--bg-white);
   border-top: 1px solid var(--border-gray);
   margin-top: 16px;
-  padding: 32px;
+  padding: 16px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--font-color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.footer > div {
-  max-width: 1020px;
+.credits {
+  flex: 1;
+}
+
+.credits a {
+  color: rgb(3, 86, 36);
+  text-decoration: underline;
+  transition: color 0.2s ease-in-out;
+}
+
+.credits a:hover {
+  color: rgb(21, 160, 76);
+}
+
+.icons {
+  border-radius: 50%;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.icons:hover {
+  background-color: var(--bg-beige);
+  color: black;
 }
