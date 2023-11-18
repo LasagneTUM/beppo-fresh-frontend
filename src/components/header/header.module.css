@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 50;
 
   background-color: var(-fg-white);
   box-shadow: var(--box-shadow-normal);
