@@ -26,8 +26,17 @@
 .main {
   max-width: 1020px;
   margin: 0 auto;
-  background-color: var(--bg-white);
   z-index: 1;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.main > div {
+  background-color: var(--bg-white);
   padding: 16px;
+}
+
+.recipeHead {
 }
