@@ -14,7 +14,6 @@ export default function LoginPage() {
   };
 
   if (user) {
-    console.log("User is", user);
     return <Navigate to="/" />;
   }
 

@@ -53,7 +53,6 @@ export default function InteractiveList() {
         preference_change: selectedValue - 3,
       },
     ];
-    console.log("Preference:", parsedForBackend);
 
     updatePreferences(parsedForBackend);
   };
