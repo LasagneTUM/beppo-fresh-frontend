@@ -1,0 +1,9 @@
+.card {
+  max-width: 400px;
+  min-width: 300px;
+  flex-shrink: 1;
+  flex-grow: 1;
+  min-height: 200px;
+  border: 1px solid gainsboro;
+  border-radius: 8px;
+}
