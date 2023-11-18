@@ -4,6 +4,13 @@
   gap: 16px;
 }
 
+.status {
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: var(--font-color-secondary);
+}
+
 @media only screen and (max-width: 800px) {
   .gallery {
     grid-template-columns: 1fr 1fr;

@@ -38,6 +38,12 @@ body {
   background-color: var(--bg-beige);
 }
 
+html,
+body,
+#root {
+  height: 100%;
+}
+
 h1 {
   font-size: 3em;
   line-height: 1.1;

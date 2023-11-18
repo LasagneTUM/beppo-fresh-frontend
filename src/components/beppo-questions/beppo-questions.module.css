@@ -96,7 +96,7 @@
 .options img {
   object-fit: contain;
   border-radius: 4px;
-  height: 58px;
+  height: 54px;
 }
 
 .options button {
@@ -105,6 +105,7 @@
   transition: background-color 0.2s ease-in-out;
   padding: 2px;
 
+  border: solid;
   border-color: var(--fg-green);
   border-top-width: 2px;
   border-bottom-width: 2px;
