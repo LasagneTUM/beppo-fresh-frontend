@@ -2,6 +2,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import InteractiveList from "./components/interactive-list/interactive-list";
 import LoginPage from "./components/login-page/login-page";
 import Root from "./components/root/root";
+import { RecipePage } from "./components/recipe-page/recipe-page";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <InteractiveList />,
+      },
+      {
+        path: "/recipe/:id",
+        element: <RecipePage />,
       },
     ],
   },

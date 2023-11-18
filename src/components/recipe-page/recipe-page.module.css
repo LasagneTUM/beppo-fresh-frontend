@@ -1,0 +1,9 @@
+.breadcrumbs li:not(:first-of-type)::before {
+  content: " > ";
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.breadcrumbs li {
+  display: inline;
+}
