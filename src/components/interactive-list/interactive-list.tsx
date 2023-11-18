@@ -2,6 +2,7 @@ import { useState } from "react";
 import Gallery from "../gallery/gallery";
 import styles from "./interactive-list.module.css";
 import { Recipe } from "../../types/recipe";
+import { BeppoQuestions } from "../beppo-questions/beppo-questions";
 
 const getMockRecipe = (index: number): Recipe => ({
   id: `${index}`,
@@ -38,7 +39,7 @@ export default function InteractiveList() {
         voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
         clita kasd gubergren
       </p>
-      {/* TODO Beppo box */}
+      <BeppoQuestions />
       <Gallery recipes={recipes} />
     </div>
   );
