@@ -1,0 +1,9 @@
+.loginPage {
+  background-color: #f8f8f8;
+  min-height: 100vh;
+}
+
+.loginDialog {
+  background-color: white;
+  border: 1px solid var(--border-gray);
+}
