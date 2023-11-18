@@ -1,6 +1,15 @@
-button {
+.button {
   border: none;
   background-color: var(--fg-green);
   color: var(--fg-white);
   font-weight: semibold;
+  height: 48px;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.secondary {
+  background-color: transparent;
+  border: 2px solid var(--fg-green);
+  color: var(--fg-green);
 }
