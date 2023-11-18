@@ -49,8 +49,8 @@ export default function InteractiveList() {
 
   return (
     <div className={styles.container}>
-      <h1>BBQ Rezepte</h1>
-      <p>
+      <h1 className={styles.title}>Rezeptfinder</h1>
+      <p className={styles.description}>
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
         eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
         voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
