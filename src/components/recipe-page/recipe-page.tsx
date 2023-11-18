@@ -14,7 +14,7 @@ import {
 } from '@radix-ui/react-toast';
 import { useState } from 'react';
 import { useRecipe } from '../../network/useRecipe';
-import { Navigate, useParams } from 'react-router';
+import { Navigate } from 'react-router';
 
 export function RecipePage() {
   const [open, setOpen] = useState(false);
@@ -22,8 +22,6 @@ export function RecipePage() {
     setOpen(true);
   };
 
-  const params = useParams();
-  console.log("PARAMS ARE", params);
   const recipe = useRecipe();
 
   const [goHome, setGoHome] = useState(false);
