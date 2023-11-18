@@ -15,7 +15,7 @@ const loadingOptions: Options[number] = {
 };
 
 type BeppoQuestionsOptions = {
-  onSelectionDone?: () => void,
+  onSelectionDone?: (options: Options[number], selectedValue: number) => void,
 };
 
 export function BeppoQuestions({ onSelectionDone }: BeppoQuestionsOptions) {
@@ -25,7 +25,7 @@ export function BeppoQuestions({ onSelectionDone }: BeppoQuestionsOptions) {
 
   const handleSelection = (n: number) => {
     setOptionIndex(i => i + 1);
-    onSelectionDone?.();
+    onSelectionDone?.({ first_option, second_option }, n);
   };
 
   return (
