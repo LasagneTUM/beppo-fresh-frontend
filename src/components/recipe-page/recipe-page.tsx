@@ -1,5 +1,7 @@
 import styles from './recipe-page.module.css';
 import exampleImage from './example-image.avif';
+import exampleIngredient from './example-ingredient.avif';
+import exampleStep from './example-step.avif';
 import Button from '../button/button';
 
 export function RecipePage() {
@@ -15,7 +17,7 @@ export function RecipePage() {
     <img className={styles.recipeImage} src={exampleImage} alt="Recipe Product Image" />
     <main className={styles.main}>
       <div className={styles.recipeHead}>
-        <div>
+        <div className={styles.recipeHeadTitles}>
           <h1>Tacos mit Räuchertofu & Mango-Paprika-Salsa</h1>
           <h2>Bei diesem Gericht wird 50% weniger CO2e durch Zutaten verursacht als bei einem durchschnittlichen HelloFresh Rezept</h2>
         </div>
@@ -29,24 +31,29 @@ export function RecipePage() {
           <p>Allergene: Weizen • Soja</p>
           <p>Bitte beachte auch die Informationen zu Inhaltsstoffen und Allergenen auf dem Produktetikett.</p>
         </div>
+        <div>
+          <div><span>Gesamtzeit</span> <span>30 Minuten</span></div>
+          <div><span>Arbeitszeit</span> <span>20 Minuten</span></div>
+          <div><span>Schwierigkeitsgrad</span> <span>Mittel</span></div>
+        </div>
       </div>
-      <div>
+      <div className={styles.ingredients}>
         <h2>Zutaten</h2>
         <ul>
-          <li>200 g Weizentortillas (Enthält Weizen.)</li>
-          <li>175 g geräucherter Tofu (Enthält Soja.)</li>
-          <li>1 piece Mango</li>
-          <li>2 piece rote Spitzpaprika</li>
+          <li><img src={exampleIngredient} alt="Ingredient image" /><div>200 g<br />Weizentortillas<br />(Enthält Weizen.)</div></li>
+          <li><img src={exampleIngredient} alt="Ingredient image" /><div>175 g<br />geräucherter Tofu<br />(Enthält Soja.)</div></li>
+          <li><img src={exampleIngredient} alt="Ingredient image" /><div>1 piece<br />Mango</div></li>
+          <li><img src={exampleIngredient} alt="Ingredient image" /><div>2 piece<br />rote Spitzpaprika</div></li>
         </ul>
         <hr />
         <h2>Was du zu Hause haben solltest</h2>
         <ul>
-          <li>1 Esslöffel Olivenöl</li>
-          <li>nach Geschmack Salz</li>
+          <li><img src={exampleIngredient} alt="Ingredient image" /><div>1 Esslöffel Olivenöl</div></li>
+          <li><img src={exampleIngredient} alt="Ingredient image" /><div>nach Geschmack Salz</div></li>
         </ul>
       </div>
-      <div>
-        Kochutensilien
+      <div className={styles.utensils}>
+        <h2>Kochutensilien</h2>
         <ul>
           <li>Reibe</li>
           <li>Große Schüssel</li>
@@ -56,19 +63,17 @@ export function RecipePage() {
       </div>
       <div>
         <h2>Zubereitung</h2>
-        <span>1</span>
-        <div>
-          Mango schälen, Fruchtfleisch vom Kern schneiden und in 1 cm Würfel schneiden.
-
-          Spitzpaprika halbieren, entkernen und in 1 cm Würfel schneiden.
-
-          Zwiebel halbieren und in feine Streifen schneiden.
-
-          Knoblauch fein hacken.
-
-          Räuchertofu mithilfe einer Gemüsereibe in feine Streifen hobeln.
-
-          Tipp: Es ist kein Problem, dass der Räuchertofu dabei etwas auseinanderfällt.
+        <div className={styles.step}>
+          <img src={exampleStep} alt="Step image" />
+          <span>1</span>
+          <div>
+            <p>Mango schälen, Fruchtfleisch vom Kern schneiden und in 1 cm Würfel schneiden.</p>
+            <p>Spitzpaprika halbieren, entkernen und in 1 cm Würfel schneiden.</p>
+            <p>Zwiebel halbieren und in feine Streifen schneiden.</p>
+            <p>Knoblauch fein hacken.</p>
+            <p>Räuchertofu mithilfe einer Gemüsereibe in feine Streifen hobeln.</p>
+            <p>Tipp: Es ist kein Problem, dass der Räuchertofu dabei etwas auseinanderfällt.</p>
+          </div>
         </div>
       </div>
     </main >
