@@ -1,0 +1,10 @@
+.footer {
+  background-color: var(--bg-white);
+  border-top: 1px solid var(--border-gray);
+  margin-top: 16px;
+  padding: 32px;
+}
+
+.footer > div {
+  max-width: 1020px;
+}
