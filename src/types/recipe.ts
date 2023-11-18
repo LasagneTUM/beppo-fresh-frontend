@@ -1,6 +1,6 @@
 import { Nutrition } from "./nutrition";
 import { Tag } from "./tag";
-  
+
 export interface Recipe {
   id: string;
   name: string;

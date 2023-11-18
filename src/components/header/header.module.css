@@ -5,8 +5,8 @@
   align-items: center;
   justify-content: center;
 
-  background-color: rgb(255, 255, 255);
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 4px 0px;
+  background-color: var(-fg-white);
+  box-shadow: var(--box-shadow-normal);
   padding-left: 16px;
   padding-right: 16px;
 }

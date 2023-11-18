@@ -8,7 +8,12 @@
   flex-direction: column;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 4px 0px;
+  box-shadow: var(--box-shadow-normal);
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: var(--box-shadow-hover);
 }
 
 .paddedWrapper {
