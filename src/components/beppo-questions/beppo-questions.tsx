@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useOptions } from "../../network/useOptions";
 import styles from "./beppo-questions.module.css";
 import { Option, Options } from "../../types/options";
+import { IconChevronDown, IconChevronUp } from "@tabler/icons-react";
+import classNames from "classnames";
 
 const loadingOption: Option = {
   name: "Loading",
@@ -19,6 +21,11 @@ export type BeppoQuestionsProps = {
 };
 
 export function BeppoQuestions({ onSelectionDone }: BeppoQuestionsProps) {
+  const [expanded, setExpanded] = useState(true);
+  const toggleExpanded = () => {
+    setExpanded(!expanded);
+  };
+
   const options = useOptions();
   const [optionIndex, setOptionIndex] = useState(0);
   const { first_option, second_option } =
@@ -26,26 +33,56 @@ export function BeppoQuestions({ onSelectionDone }: BeppoQuestionsProps) {
 
   const handleSelection = (n: number) => {
     setOptionIndex((i) => i + 1);
-    onSelectionDone?.({ first_option, second_option }, n);
+    onSelectionDone({ first_option, second_option }, n);
   };
 
   return (
     <div className={styles.beppoQuestions}>
-      <div className={styles.speechBubble}>
-        <div className={styles.x}>x</div>
-        <div className={styles.preQuestion}>
-          Help me to find better recommendations :)
+      <div className={styles.container}>
+        <div className={styles.headerWrapper}>
+          <div className={styles.header}>
+            <div className={styles.textSecondary}>
+              Help me to find better recommendations :)
+            </div>
+            <h2 className={styles.question}>What do you prefer?</h2>
+          </div>
+
+          <IconChevronUp
+            className={classNames(styles.icons, {
+              [styles.iconsClosed]: !expanded,
+            })}
+            onClick={toggleExpanded}
+          />
         </div>
-        <h2 className={styles.question}>What do you like more?</h2>
-        <div className={styles.buttons}>
-          <button onClick={() => handleSelection(1)}>1</button>
-          <button onClick={() => handleSelection(2)}>2</button>
-          <button onClick={() => handleSelection(3)}>3</button>
-          <button onClick={() => handleSelection(4)}>4</button>
-          <button onClick={() => handleSelection(5)}>5</button>
+
+        <div className={styles.options}>
+          <button onClick={() => handleSelection(1)}>
+            <img
+              src={first_option.imageLink}
+              alt={`Preference: ${first_option.name}`}
+            />
+          </button>
+          <button onClick={() => handleSelection(2)}></button>
+          <button onClick={() => handleSelection(3)}></button>
+          <button onClick={() => handleSelection(4)}></button>
+          <button onClick={() => handleSelection(5)}>
+            <img
+              src={second_option.imageLink}
+              alt={`Preference: ${second_option.name}`}
+            />
+          </button>
+          <span className={styles.textSecondary}>{first_option.name}</span>
+          <span
+            className={classNames(styles.textSecondary, styles.optionCenterCol)}
+          >
+            Neutral
+          </span>
+          <span
+            className={classNames(styles.textSecondary, styles.optionLastCol)}
+          >
+            {second_option.name}
+          </span>
         </div>
-        <div className={styles.text1}>{first_option.name}</div>
-        <div className={styles.text5}>{second_option.name}</div>
       </div>
     </div>
   );

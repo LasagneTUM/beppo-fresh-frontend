@@ -49,7 +49,7 @@ export default function InteractiveList() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Rezeptfinder</h1>
+      <h1 className={styles.title}>Recipe finder</h1>
       <p className={styles.description}>
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
         eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam

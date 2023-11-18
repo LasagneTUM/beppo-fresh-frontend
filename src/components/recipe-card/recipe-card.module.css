@@ -47,7 +47,7 @@
 
 .tags {
   line-height: normal;
-  color: rgb(103, 103, 103);
+  color: var(--font-color-secondary);
 }
 
 .headline,
