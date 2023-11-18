@@ -1,3 +1,43 @@
-<svg width="26" height="28" viewBox="0 0 26 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path id="Intersect" fill-rule="evenodd" clip-rule="evenodd" d="M26 0.458618C20.8087 12.257 12.1754 24.7659 0 26.5538C9.41141 28.2814 18.9698 26.1689 26 23.53V0.458618Z" fill="#F5F5F5"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="26"
+   height="28"
+   viewBox="0 0 26 28"
+   fill="none"
+   version="1.1"
+   id="svg3"
+   sodipodi:docname="speech-bubble-zipfel.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs7" />
+  <sodipodi:namedview
+     id="namedview5"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="8.4285714"
+     inkscape:cx="13.050847"
+     inkscape:cy="14"
+     inkscape:window-width="1920"
+     inkscape:window-height="1129"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3" />
+  <path
+     id="Intersect"
+     fill-rule="evenodd"
+     clip-rule="evenodd"
+     d="M26 0.458618C20.8087 12.257 12.1754 24.7659 0 26.5538C9.41141 28.2814 18.9698 26.1689 26 23.53V0.458618Z"
+     fill="#F5F5F5"
+     style="fill:#ffffff;fill-opacity:1" />
 </svg>

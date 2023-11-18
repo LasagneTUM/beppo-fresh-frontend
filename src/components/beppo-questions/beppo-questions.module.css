@@ -4,17 +4,8 @@
   justify-content: center;
 }
 
-.beppoQuestions::before {
-  content: " ";
-  position: absolute;
-  left: 0;
-  height: 24px;
-  background: url("beppo-fresh.png") no-repeat;
-  display: block;
-}
-
 .speechBubble {
-  background-color: var(--bg-beige);
+  background-color: var(--bg-white);
   border-radius: 13px;
   padding: 12px;
   display: grid;
@@ -41,16 +32,19 @@
 }
 
 .speechBubble::after {
-  content: "ö";
+  content: " ";
   position: absolute;
-  left: -26px;
-  width: 2000px;
-  height: 2000px;
-  top: 75%;
+  left: -125px;
+  width: 150px;
+  height: 150px;
+  top: calc(75% - 80px);
   background: url("beppo-fresh.png") no-repeat;
+  background-size: 150px;
   display: block;
+  animation:
+    beppo-jump-in 0.5s 5 ease-in,
+    beppo-walk-in 2.5s ease-out;
 }
-
 
 .preQuestion {
   grid-area: pre-question;
@@ -87,7 +81,7 @@
 }
 
 .buttons button:hover {
-  background-color: var(--bg-white);
+  background-color: var(--bg-beige);
 }
 
 .text1 {
@@ -100,3 +94,27 @@
   text-align: center;
 }
 
+@keyframes beppo-jump-in {
+  0% {
+    margin-top: 0;
+  }
+
+  50% {
+    margin-top: -25px;
+    transform: rotate(5deg)
+  }
+
+  100% {
+    margin-top: 0;
+  }
+}
+
+@keyframes beppo-walk-in {
+  0% {
+    margin-left: -500px;
+  }
+
+  100% {
+    margin-left: 0;
+  }
+}
