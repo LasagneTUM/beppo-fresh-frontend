@@ -1,4 +1,6 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import InteractiveList from "./components/interactive-list/interactive-list";
+import Layout from "./components/layout/layout";
 import LoginPage from "./components/login-page/login-page";
 
 const router = createBrowserRouter([
@@ -8,7 +10,13 @@ const router = createBrowserRouter([
   },
   {
     path: "/",
-    element: <>TODO</>,
+    element: <Layout />,
+    children: [
+      {
+        path: "",
+        element: <InteractiveList />,
+      },
+    ],
   },
 ]);
 
