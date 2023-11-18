@@ -2,7 +2,7 @@ import { MouseEventHandler, useState } from "react";
 import styles from "./login-page.module.css";
 import Button from "../button/button";
 import { useUser } from "../../hooks/use-user";
-import { redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 export default function LoginPage() {
   const [username, setUsername] = useState("");
@@ -15,7 +15,7 @@ export default function LoginPage() {
 
   if (user.length) {
     console.log("User is", user);
-    redirect("../");
+    return <Navigate to="/" />;
   }
 
   return <div className={styles.loginPage}>
