@@ -1,0 +1,19 @@
+.beppoQuestions {
+  padding: 24px 0;
+}
+
+.speechBubble {
+  background-color: var(--bg-beige);
+  border-radius: 13px;
+  padding: 12px;
+  display: grid;
+  grid-template-areas:
+    "pre-question pre-question pre-question pre-question pre-question x"
+    "question question question question question ."
+    "buttons buttons button button button ."
+    "text-1 text-2 text-3 text-4 text-5 .";
+}
+
+.preQuestion {
+  
+}
