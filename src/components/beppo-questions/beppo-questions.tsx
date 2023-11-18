@@ -13,13 +13,18 @@ const loadingOptions: Options = {
   second_option: loadingOption,
 };
 
-export function BeppoQuestions() {
+type BeppoQuestionsOptions = {
+  onSelectionDone?: () => void,
+};
+
+export function BeppoQuestions({ onSelectionDone }: BeppoQuestionsOptions) {
   const options = useOptions();
   const [optionIndex, setOptionIndex] = useState(0);
   const { first_option, second_option } = options[optionIndex] || loadingOptions;
 
   const handleSelection = (n: number) => {
     setOptionIndex(i => i + 1);
+    onSelectionDone?.();
   };
 
   return (
