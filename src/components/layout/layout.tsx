@@ -7,8 +7,10 @@ export default function Layout() {
   return (
     <div className={styles.layoutContainer}>
       <Header />
-      <Outlet />
-      <Footer />
+      <div className={styles.scrollContainer}>
+        <Outlet />
+        <Footer />
+      </div>
     </div>
   );
 }
