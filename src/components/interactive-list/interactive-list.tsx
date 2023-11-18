@@ -3,10 +3,12 @@ import Gallery from "../gallery/gallery";
 import styles from "./interactive-list.module.css";
 import { Recipe } from "../../types/recipe";
 import { BeppoQuestions } from "../beppo-questions/beppo-questions";
+// import Button from "../button/button";
+// import { shuffleArray } from "../../util";
 
 const getMockRecipe = (index: number): Recipe => ({
   id: `${index}`,
-  name: "BBQ Burritos",
+  name: index % 2 ? `BBQ Burritos ${index + 1}` : `Tortillas ${index + 1}`,
   headline:
     "This dish produces 50% less CO2e from ingredients than an average HelloFresh recipe",
   image:
@@ -44,6 +46,9 @@ export default function InteractiveList() {
         voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
         clita kasd gubergren
       </p>
+      {/* <Button onClick={() => setRecipes(shuffleArray([...recipes]))}>
+        Shuffle
+      </Button> */}
       <BeppoQuestions />
       <Gallery recipes={recipes} />
     </div>
