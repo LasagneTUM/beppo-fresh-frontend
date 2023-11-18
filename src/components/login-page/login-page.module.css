@@ -22,8 +22,7 @@
   margin: 0;
 }
 
-.loginDialog input,
-.loginDialog button {
+.loginDialog input {
   height: 48px;
   border-radius: 4px;
   font-size: 1rem;

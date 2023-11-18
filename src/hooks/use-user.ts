@@ -1,12 +1,17 @@
-import { useState } from "react"
+import { useState } from "react";
 
-export function useUser(): [string, (user: string) => void] {
-  const [user, setUser] = useState(localStorage.getItem("user") || "")
+export function useUser(): [string | null, (user: string | null) => void] {
+  const [user, setUser] = useState(localStorage.getItem("user") || null);
 
-  const setUserExternal = (user: string) => {
-    setUser(user)
-    localStorage.setItem("user", user)
-  }
+  const setUserExternal = (user: string | null) => {
+    console.log("Set user to", user);
+    setUser(user);
+    if (user === null) {
+      localStorage.removeItem("user");
+    } else {
+      localStorage.setItem("user", user);
+    }
+  };
 
-  return [user, setUserExternal]
+  return [user, setUserExternal];
 }
