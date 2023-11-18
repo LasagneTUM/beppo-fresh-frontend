@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useOptions } from "../../network/useOptions";
 import styles from "./beppo-questions.module.css";
 import { Option, Options } from "../../types/options";
-import { IconChevronDown, IconChevronUp } from "@tabler/icons-react";
+import { IconChevronUp } from "@tabler/icons-react";
 import classNames from "classnames";
 
 const loadingOption: Option = {
