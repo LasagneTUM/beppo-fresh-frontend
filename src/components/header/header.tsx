@@ -2,8 +2,9 @@ import { useNavigate } from "react-router";
 import Button from "../button/button";
 import styles from "./header.module.css";
 import { useUser } from "../../hooks/use-user";
-import logo from './logo.png';
+import logo from "./logo.png";
 import { Link } from "react-router-dom";
+import { IconLogout } from "@tabler/icons-react";
 
 export default function Header() {
   const [, setUser] = useUser();
@@ -27,6 +28,7 @@ export default function Header() {
       <Button variant="secondary" onClick={logout} className={styles.logoutBtn}>
         Logout
       </Button>
+      <IconLogout onClick={logout} className={styles.logoutIcon} />
     </div>
   );
 }
