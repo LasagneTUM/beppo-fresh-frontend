@@ -1,5 +1,16 @@
 .beppoQuestions {
   padding: 24px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.beppoQuestions::before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  height: 24px;
+  background: url("beppo-fresh.png") no-repeat;
+  display: block;
 }
 
 .speechBubble {
@@ -10,10 +21,82 @@
   grid-template-areas:
     "pre-question pre-question pre-question pre-question pre-question x"
     "question question question question question ."
-    "buttons buttons button button button ."
+    "buttons buttons buttons buttons buttons ."
     "text-1 text-2 text-3 text-4 text-5 .";
+    grid-template-columns: repeat(5, 1fr) auto;
+    max-width: 600px;
+  flex-grow: 1;
+  position: relative;
 }
 
-.preQuestion {
-  
+.speechBubble::before {
+  content: " ";
+  position: absolute;
+  left: -26px;
+  width: 26px;
+  height: 28px;
+  top: 75%;
+  background: url("speech-bubble-zipfel.svg") no-repeat;
+  display: block;
 }
+
+.speechBubble::after {
+  content: "ö";
+  position: absolute;
+  left: -26px;
+  width: 2000px;
+  height: 2000px;
+  top: 75%;
+  background: url("beppo-fresh.png") no-repeat;
+  display: block;
+}
+
+
+.preQuestion {
+  grid-area: pre-question;
+}
+
+.question {
+  grid-area: question;
+  margin-top: 0;
+}
+
+.x {
+  grid-area: x;
+}
+
+.buttons {
+  grid-area: buttons;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border: 2px solid var(--fg-green);
+  border-radius: 8px;
+  height: 90px;
+  padding: 4px;
+}
+
+.buttons button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: transparent;
+}
+
+.buttons button:not(:last-child) {
+  border-right: 2px solid var(--fg-green);
+}
+
+.buttons button:hover {
+  background-color: var(--bg-white);
+}
+
+.text1 {
+  grid-area: text-1;
+  text-align: center;
+}
+
+.text5 {
+  grid-area: text-5;
+  text-align: center;
+}
+
