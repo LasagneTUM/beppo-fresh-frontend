@@ -3,7 +3,7 @@
   height: 56px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 
   background-color: rgb(255, 255, 255);
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 4px 0px;
@@ -12,6 +12,33 @@
 }
 
 .logoutBtn {
-  margin-left: auto;
   min-width: 110px;
+  position: absolute;
+  right: 16px;
+}
+
+.logo {
+  height: 30px;
+  display: block;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 1;
+}
+
+.menuItem {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    justify-content: space-between;
+  }
+
+  .menuItem {
+    display: inline;
+  }
 }
