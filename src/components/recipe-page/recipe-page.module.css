@@ -39,4 +39,63 @@
 }
 
 .recipeHead {
+  display: grid;
+  grid-template-areas: "titles action" "hr hr" "details1 details2";
+  grid-template-columns: 1fr 300px;
+}
+
+.recipeHeadTitles {
+  grid-area: titles;
+}
+
+.recipeHead h1 {
+  margin-top: 0;
+  font-size: 2.4rem;
+}
+
+.recipeHead hr {
+  grid-area: hr;
+  width: 100%;
+}
+
+.ingredients ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.ingredients li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ingredients ul img {
+  border-radius: 50%;
+  border: 1px solid var(--border-gray);
+  width: 70px;
+}
+
+.utensils ul {
+  display: flex;
+  gap: 32px;
+}
+
+hr {
+  border: 1px solid var(--border-gray);
+}
+
+.step {
+  display: grid;
+  grid-template-areas: "image step instructions";
+  grid-template-columns: "";
+  gap: 16px;
+}
+
+.step > span {
+  display: block;
+  width: 50px;
+  height: 50px;
 }
