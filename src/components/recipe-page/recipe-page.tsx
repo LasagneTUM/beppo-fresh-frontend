@@ -3,6 +3,7 @@ import exampleImage from './example-image.avif';
 import exampleIngredient from './example-ingredient.avif';
 import exampleStep from './example-step.avif';
 import Button from '../button/button';
+import { Ingredient } from '../ingredient/ingredient';
 
 export function RecipePage() {
   return <div>
@@ -40,16 +41,16 @@ export function RecipePage() {
       <div className={styles.ingredients}>
         <h2>Zutaten</h2>
         <ul>
-          <li><img src={exampleIngredient} alt="Ingredient image" /><div>200 g<br />Weizentortillas<br />(Enthält Weizen.)</div></li>
-          <li><img src={exampleIngredient} alt="Ingredient image" /><div>175 g<br />geräucherter Tofu<br />(Enthält Soja.)</div></li>
-          <li><img src={exampleIngredient} alt="Ingredient image" /><div>1 piece<br />Mango</div></li>
-          <li><img src={exampleIngredient} alt="Ingredient image" /><div>2 piece<br />rote Spitzpaprika</div></li>
+          <Ingredient imageLink={exampleIngredient} amount='200 g' additionalInfo='Enthält Weizen'>Weizentortilla</Ingredient>
+          <Ingredient imageLink={exampleIngredient} amount='175 g' additionalInfo='geräucherter Tofu'>Weizentortilla</Ingredient>
+          <Ingredient imageLink={exampleIngredient} amount='1 piece'>Mango</Ingredient>
+          <Ingredient imageLink={exampleIngredient} amount='2 piece'>rote Spitzpaprika</Ingredient>
         </ul>
         <hr />
         <h2>Was du zu Hause haben solltest</h2>
         <ul>
-          <li><img src={exampleIngredient} alt="Ingredient image" /><div>1 Esslöffel Olivenöl</div></li>
-          <li><img src={exampleIngredient} alt="Ingredient image" /><div>nach Geschmack Salz</div></li>
+          <Ingredient imageLink={exampleIngredient} amount='1 Esslöffel'>Olivenöl</Ingredient>
+          <Ingredient imageLink={exampleIngredient} amount='nach Geschmack'>Salz</Ingredient>
         </ul>
       </div>
       <div className={styles.utensils}>
@@ -63,16 +64,43 @@ export function RecipePage() {
       </div>
       <div>
         <h2>Zubereitung</h2>
-        <div className={styles.step}>
-          <img src={exampleStep} alt="Step image" />
-          <span>1</span>
-          <div>
-            <p>Mango schälen, Fruchtfleisch vom Kern schneiden und in 1 cm Würfel schneiden.</p>
-            <p>Spitzpaprika halbieren, entkernen und in 1 cm Würfel schneiden.</p>
-            <p>Zwiebel halbieren und in feine Streifen schneiden.</p>
-            <p>Knoblauch fein hacken.</p>
-            <p>Räuchertofu mithilfe einer Gemüsereibe in feine Streifen hobeln.</p>
-            <p>Tipp: Es ist kein Problem, dass der Räuchertofu dabei etwas auseinanderfällt.</p>
+        <div className={styles.steps}>
+          <div className={styles.step}>
+            <img src={exampleStep} alt="Step image" />
+            <div>
+              <span>1</span>
+              <div>
+                <p>Mango schälen, Fruchtfleisch vom Kern schneiden und in 1 cm Würfel schneiden.</p>
+                <p>Spitzpaprika halbieren, entkernen und in 1 cm Würfel schneiden.</p>
+                <p>Zwiebel halbieren und in feine Streifen schneiden.</p>
+                <p>Knoblauch fein hacken.</p>
+                <p>Räuchertofu mithilfe einer Gemüsereibe in feine Streifen hobeln.</p>
+                <p>Tipp: Es ist kein Problem, dass der Räuchertofu dabei etwas auseinanderfällt.</p>
+              </div>
+            </div>
+          </div>
+          <div className={styles.step}>
+            <img src={exampleStep} alt="Step image" />
+            <div>
+              <span>2</span>
+              <div>
+                <p>Mango schälen, Fruchtfleisch vom Kern schneiden und in 1 cm Würfel schneiden.</p>
+                <p>Spitzpaprika halbieren, entkernen und in 1 cm Würfel schneiden.</p>
+                <p>Zwiebel halbieren und in feine Streifen schneiden.</p>
+              </div>
+            </div>
+          </div>
+          <div className={styles.step}>
+            <img src={exampleStep} alt="Step image" />
+            <div>
+              <span>3</span>
+              <div>
+                <p>Mango schälen, Fruchtfleisch vom Kern schneiden und in 1 cm Würfel schneiden.</p>
+                <p>Spitzpaprika halbieren, entkernen und in 1 cm Würfel schneiden.</p>
+                <p>Zwiebel halbieren und in feine Streifen schneiden.</p>
+                <p>Knoblauch fein hacken.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

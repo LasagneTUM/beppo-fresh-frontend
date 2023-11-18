@@ -38,6 +38,10 @@
   padding: 16px;
 }
 
+.main > div > h2 {
+  margin-top: 0;
+}
+
 .recipeHead {
   display: grid;
   grid-template-areas: "titles action" "hr hr" "details1 details2";
@@ -87,15 +91,37 @@ hr {
   border: 1px solid var(--border-gray);
 }
 
-.step {
-  display: grid;
-  grid-template-areas: "image step instructions";
-  grid-template-columns: "";
-  gap: 16px;
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
-.step > span {
+.step {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 48px;
+}
+
+.step > div {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 32px;
+  border-top: 1px solid var(--border-gray);
+  padding-top: 16px;
+}
+
+.step > div > span {
   display: block;
   width: 50px;
   height: 50px;
+  background-color: var(--border-gray);
+  border-radius: 50%;
+  text-align: center;
+  font-size: 1.5rem;
+  padding-top: 7px;
+}
+
+.step > div p:first-child {
+  margin-top: 0;
 }
