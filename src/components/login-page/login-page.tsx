@@ -1,5 +1,6 @@
 import { MouseEventHandler, useState } from "react";
 import styles from "./login-page.module.css";
+import Button from "../button/button";
 
 
 export default function LoginPage() {
@@ -7,13 +8,15 @@ export default function LoginPage() {
 
   const handleSubmit: MouseEventHandler<HTMLButtonElement> = (event) => {
     event.preventDefault();
-    console.log(username);
+    
+    
   }
 
   return <div className={styles.loginPage}>
     <form className={styles.loginDialog}>
-      <input type="text" onChange={v => setUsername(v.target.value)} />
-      <button type="submit" onClick={handleSubmit}>Login</button>
+      <h2>Login</h2>
+      <input type="text" onChange={v => setUsername(v.target.value)} placeholder="Username" />
+      <Button type="submit" onClick={handleSubmit}>Login</Button>
     </form>
   </div>;
 }

@@ -1,3 +1,6 @@
-.btn {
-  color: blue;
+button {
+  border: none;
+  background-color: var(--fg-green);
+  color: var(--fg-white);
+  font-weight: semibold;
 }

@@ -1,9 +1,35 @@
 .loginPage {
   background-color: #f8f8f8;
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .loginDialog {
   background-color: white;
   border: 1px solid var(--border-gray);
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  gap: 24px;
+  flex-shrink: 0;
+}
+
+.loginDialog h2 {
+  text-align: center;
+  margin: 0;
+}
+
+.loginDialog input,
+.loginDialog button {
+  height: 48px;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.loginDialog input {
+  border: 1px solid var(--border-gray);
+  padding: 8px 12px;
 }
