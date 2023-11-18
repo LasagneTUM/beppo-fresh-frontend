@@ -1,0 +1,33 @@
+.breadcrumbsBackground {
+  background-color: var(--bg-white);
+  border-bottom: 1px solid var(--border-gray);
+  display: flex;
+  justify-content: center;
+}
+
+.breadcrumbs li:not(:first-of-type)::before {
+  content: " > ";
+  font-weight: bold;
+  font-size: 1.2rem;
+  max-width: 1020px;
+}
+
+.breadcrumbs li {
+  display: inline;
+}
+
+.recipeImage {
+  height: 512px;
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: -64px;
+}
+
+.main {
+  max-width: 1020px;
+  margin: 0 auto;
+  background-color: var(--bg-white);
+  z-index: 1;
+  position: relative;
+  padding: 16px;
+}
