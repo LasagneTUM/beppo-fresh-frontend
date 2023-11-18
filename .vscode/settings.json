@@ -8,4 +8,5 @@
     "source.fixAll": "always"
   },
   "typescript.format.semicolons": "insert",
+  "cSpell.words": ["beppo"]
 }

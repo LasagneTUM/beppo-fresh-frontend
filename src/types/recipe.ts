@@ -6,11 +6,8 @@ export interface Recipe {
   name: string;
   headline: string;
   image: string;
-  prepTime: PrepTime;
+  /** Preparation time in min */
+  prepTime: number;
   tags: Tag[];
   nutrition: Nutrition;
 }
-
-export type PrepTimeUnit = "M" | "H";
-
-export type PrepTime = `PT${number}${PrepTimeUnit}`;

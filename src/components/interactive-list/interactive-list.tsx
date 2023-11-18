@@ -14,7 +14,7 @@ const getMockRecipe = (index: number): Recipe => ({
       ? "https://img.hellofresh.com/w_828,q_auto,f_auto,c_fill,fl_lossy/hellofresh_s3/image/HF_Y23_R04_W13_DE_L4529-1_Main_low-1d18ee19.jpg"
       : "https://img.hellofresh.com/w_828,q_auto,f_auto,c_fill,fl_lossy/hellofresh_s3/image/HF_Y23_R16_W51_DE_EXP2348-45_Main_low-2267ee8d.jpg",
   tags: [],
-  prepTime: "PT25M",
+  prepTime: 25,
   nutrition: {
     energy: 2534,
     calories: 606,
