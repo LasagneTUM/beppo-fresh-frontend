@@ -1,9 +1,48 @@
 .card {
-  max-width: 400px;
-  min-width: 300px;
-  flex-shrink: 1;
-  flex-grow: 1;
-  min-height: 200px;
-  border: 1px solid gainsboro;
+  display: flex;
+  flex-direction: column;
   border-radius: 8px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 4px 0px;
+}
+
+.paddedWrapper {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.img {
+  width: 100%;
+}
+
+.title {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  margin: 0 0 8px 0;
+}
+
+.headline {
+  margin: 0 0 8px 0;
+  flex: 1;
+}
+
+.prepTime {
+  font-size: 14px;
+  line-height: normal;
+  font-weight: 600;
+}
+
+.tags {
+  line-height: normal;
+  color: rgb(103, 103, 103);
+}
+
+.headline,
+.tags {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
 }
