@@ -1,14 +1,15 @@
 import { useState } from "react";
 import { useOptions } from "../../network/useOptions";
 import styles from "./beppo-questions.module.css";
+import { Option, Options } from "../../types/options";
 
 const loadingOption: Option = {
   name: "Loading",
   type: "loading",
-  image: "",
+  imageLink: "",
 };
 
-const loadingOptions: Options = {
+const loadingOptions: Options[number] = {
   first_option: loadingOption,
   second_option: loadingOption,
 };
