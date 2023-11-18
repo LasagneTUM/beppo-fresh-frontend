@@ -3,3 +3,11 @@
   max-width: 1020px;
   margin: 0 auto;
 }
+
+.title {
+  margin-top: 0;
+}
+
+.description {
+  margin: 0;
+}

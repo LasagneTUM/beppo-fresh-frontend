@@ -21,6 +21,18 @@
   box-shadow: var(--box-shadow-normal);
 }
 
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .speechBubble::before {
   content: " ";
   position: absolute;
@@ -30,6 +42,7 @@
   top: 75%;
   background: url("speech-bubble-zipfel.svg") no-repeat;
   display: block;
+  animation: 2.75s ease 0s normal forwards 1 fade-in;
 }
 
 .speechBubble::after {
