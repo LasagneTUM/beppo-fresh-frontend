@@ -13,11 +13,22 @@ import {
   Viewport
 } from '@radix-ui/react-toast';
 import { useState } from 'react';
+import { useRecipe } from '../../network/useRecipe';
+import { Navigate, useParams } from 'react-router';
 
 export function RecipePage() {
   const [open, setOpen] = useState(false);
   const setToast = () => {
     setOpen(true);
+  };
+
+  const params = useParams();
+  console.log("PARAMS ARE", params);
+  const recipe = useRecipe();
+
+  const [goHome, setGoHome] = useState(false);
+  if (goHome) {
+    return <Navigate to="/" />;
   }
 
   return <Provider swipeDirection="right">
@@ -127,8 +138,8 @@ export function RecipePage() {
       <Description asChild>
         <span>I've improved my recommendations for you.</span>
       </Description>
-      <Action className={styles.ToastAction} asChild altText="Goto schedule to undo">
-        <Button>Show me</Button>
+      <Action className={styles.ToastAction} asChild altText="Go home">
+        <Button onClick={() => setGoHome(true)}>Show me</Button>
       </Action>
     </Root>
     <Viewport className={styles.ToastViewport} />

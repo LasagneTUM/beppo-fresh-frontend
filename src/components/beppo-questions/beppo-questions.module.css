@@ -55,7 +55,7 @@
   width: 150px;
   height: 150px;
   top: calc(75% - 80px);
-  background: url("beppo-fresh.png") no-repeat;
+  background: url("/beppo-fresh.png") no-repeat;
   background-size: 150px;
   display: block;
   animation: beppo-jump-in 0.5s 5 ease-in, beppo-walk-in 2.5s ease-out;
