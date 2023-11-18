@@ -1,10 +1,11 @@
+import { Recipe } from "../../types/recipe";
 import styles from "./recipe-card.module.css";
 
 interface RecipeCardProps {
-  name: unknown;
+  recipe: Recipe;
 }
 
-export default function RecipeCard({ name }: RecipeCardProps) {
+export default function RecipeCard({ recipe }: RecipeCardProps) {
   // TODO
-  return <div className={styles.card}>{name as string}</div>;
+  return <div className={styles.card}>{recipe.name}</div>;
 }

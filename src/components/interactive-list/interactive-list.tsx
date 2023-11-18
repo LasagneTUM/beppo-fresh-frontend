@@ -1,9 +1,33 @@
 import { useState } from "react";
 import Gallery from "../gallery/gallery";
 import styles from "./interactive-list.module.css";
+import { Recipe } from "../../types/recipe";
+
+const getMockRecipe = (index: number): Recipe => ({
+  id: `${index}`,
+  name: "BBQ Burritos",
+  headline:
+    "This dish produces 50% less CO2e from ingredients than an average HelloFresh recipe",
+  image:
+    index % 2 === 0
+      ? "https://img.hellofresh.com/w_828,q_auto,f_auto,c_fill,fl_lossy/hellofresh_s3/image/HF_Y23_R04_W13_DE_L4529-1_Main_low-1d18ee19.jpg"
+      : "https://img.hellofresh.com/w_828,q_auto,f_auto,c_fill,fl_lossy/hellofresh_s3/image/HF_Y23_R16_W51_DE_EXP2348-45_Main_low-2267ee8d.jpg",
+  tags: [],
+  prepTime: "PT25M",
+  nutrition: {
+    energy: 2534,
+    calories: 606,
+    carbohydrate: 52.4,
+    protein: 38.4,
+  },
+});
+
+const mockRecipes = Array(12)
+  .fill(undefined)
+  .map((_, i) => getMockRecipe(i));
 
 export default function InteractiveList() {
-  const [recipes, setRecipes] = useState<unknown[]>([1, 2, 3, 4, 5, 6]);
+  const [recipes, setRecipes] = useState<Recipe[]>(mockRecipes);
 
   return (
     <div className={styles.container}>
