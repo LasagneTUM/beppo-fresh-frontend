@@ -69,7 +69,7 @@ export default function InteractiveList() {
       </p>
       {/* <Button onClick={() => setRecipes(shuffleArray([...recipes]))}>Shuffle</Button> */}
       <BeppoQuestions onSelectionDone={onBeppoSelection} />
-      <Gallery recipes={recipes ?? []} />
+      <Gallery recipes={recipes ?? []} loading={recipes === null} />
     </div>
   );
 }
