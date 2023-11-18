@@ -1,7 +1,7 @@
 import { useState } from "react"
 
-export function useUse() {
-  const [user, setUser] = useState(localStorage.getItem("user"))
+export function useUser(): [string, (user: string) => void] {
+  const [user, setUser] = useState(localStorage.getItem("user") || "")
 
   const setUserExternal = (user: string) => {
     setUser(user)
