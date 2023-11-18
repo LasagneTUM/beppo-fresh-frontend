@@ -2,9 +2,12 @@ import { useState } from "react";
 import Gallery from "../gallery/gallery";
 import styles from "./interactive-list.module.css";
 import { Recipe } from "../../types/recipe";
-import { BeppoQuestions } from "../beppo-questions/beppo-questions";
+import {
+  BeppoQuestions,
+  BeppoQuestionsProps,
+} from "../beppo-questions/beppo-questions";
 // import Button from "../button/button";
-// import { shuffleArray } from "../../util";
+import { shuffleArray } from "../../util";
 
 const getMockRecipe = (index: number): Recipe => ({
   id: `${index}`,
@@ -37,6 +40,13 @@ const mockRecipes = Array(12)
 export default function InteractiveList() {
   const [recipes, setRecipes] = useState<Recipe[]>(mockRecipes);
 
+  const onBeppoSelection: BeppoQuestionsProps["onSelectionDone"] = (
+    options,
+    selectedValue
+  ) => {
+    setRecipes(shuffleArray([...recipes]));
+  };
+
   return (
     <div className={styles.container}>
       <h1>BBQ Rezepte</h1>
@@ -46,10 +56,8 @@ export default function InteractiveList() {
         voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
         clita kasd gubergren
       </p>
-      {/* <Button onClick={() => setRecipes(shuffleArray([...recipes]))}>
-        Shuffle
-      </Button> */}
-      <BeppoQuestions />
+      {/* <Button onClick={() => setRecipes(shuffleArray([...recipes]))}>Shuffle</Button> */}
+      <BeppoQuestions onSelectionDone={onBeppoSelection} />
       <Gallery recipes={recipes} />
     </div>
   );
