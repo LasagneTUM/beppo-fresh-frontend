@@ -14,17 +14,18 @@ const loadingOptions: Options[number] = {
   second_option: loadingOption,
 };
 
-type BeppoQuestionsOptions = {
-  onSelectionDone?: (options: Options[number], selectedValue: number) => void,
+export type BeppoQuestionsProps = {
+  onSelectionDone: (options: Options[number], selectedValue: number) => void;
 };
 
-export function BeppoQuestions({ onSelectionDone }: BeppoQuestionsOptions) {
+export function BeppoQuestions({ onSelectionDone }: BeppoQuestionsProps) {
   const options = useOptions();
   const [optionIndex, setOptionIndex] = useState(0);
-  const { first_option, second_option } = options[optionIndex] || loadingOptions;
+  const { first_option, second_option } =
+    options[optionIndex] || loadingOptions;
 
   const handleSelection = (n: number) => {
-    setOptionIndex(i => i + 1);
+    setOptionIndex((i) => i + 1);
     onSelectionDone?.({ first_option, second_option }, n);
   };
 
@@ -32,7 +33,9 @@ export function BeppoQuestions({ onSelectionDone }: BeppoQuestionsOptions) {
     <div className={styles.beppoQuestions}>
       <div className={styles.speechBubble}>
         <div className={styles.x}>x</div>
-        <div className={styles.preQuestion}>Help me to find better recommendations :)</div>
+        <div className={styles.preQuestion}>
+          Help me to find better recommendations :)
+        </div>
         <h2 className={styles.question}>What do you like more?</h2>
         <div className={styles.buttons}>
           <button onClick={() => handleSelection(1)}>1</button>
