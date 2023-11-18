@@ -6,6 +6,20 @@ interface RecipeCardProps {
 }
 
 export default function RecipeCard({ recipe }: RecipeCardProps) {
-  // TODO
-  return <div className={styles.card}>{recipe.name}</div>;
+  return (
+    <div className={styles.card}>
+      <img className={styles.img} src={recipe.image} alt={recipe.name}></img>
+      <div className={styles.paddedWrapper}>
+        <h3 className={styles.title}>{recipe.name}</h3>
+        <p className={styles.headline}>{recipe.headline}</p>
+        <div>
+          <b className={styles.prepTime}>{recipe.prepTime} min</b>
+          <span className={styles.tags}>
+            {recipe.tags.length > 0 && " | "}
+            {recipe.tags.map((tag) => tag.name).join(" • ")}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
 }
