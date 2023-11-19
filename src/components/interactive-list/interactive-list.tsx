@@ -46,11 +46,11 @@ export default function InteractiveList() {
     const parsedForBackend: PreferenceUpdate["preference_updates"] = [
       {
         preference: options.first_option.name,
-        preference_change: 3 - selectedValue,
+        preference_change: (3 - selectedValue),
       },
       {
         preference: options.second_option.name,
-        preference_change: selectedValue - 3,
+        preference_change: (selectedValue - 3),
       },
     ];
 

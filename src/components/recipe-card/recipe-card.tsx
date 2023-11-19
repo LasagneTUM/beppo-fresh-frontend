@@ -16,6 +16,7 @@ const RecipeCard = forwardRef(
             className={styles.img}
             src={recipe.image}
             alt={recipe.name}
+            loading="lazy"
           ></img>
           <div className={styles.paddedWrapper}>
             <h3 className={styles.title}>{recipe.name}</h3>

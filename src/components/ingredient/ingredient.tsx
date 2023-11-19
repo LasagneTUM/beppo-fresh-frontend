@@ -1,40 +1,31 @@
-import { IconCheck, IconX } from '@tabler/icons-react';
 import styles from './ingredient.module.css';
-import { Root, Trigger, Portal, Content, Item, Label, Arrow } from '@radix-ui/react-dropdown-menu';
+import { PreferenceDropdown } from '../preference-dropdown/preference-dropdown';
+import { useState } from 'react';
 
 export type IngredientProps = {
   amount: string;
   children: string;
   additionalInfo?: string;
-  imageLink: string;
+  imageLink?: string;
   onFeedback: () => void;
 };
 
 export function Ingredient({ amount, children, additionalInfo, imageLink, onFeedback }: IngredientProps) {
+  const [hasImage, setHasImage] = useState(true);
+
   return <li className={styles.ingredient}>
-    <Root>
-      <Trigger asChild>
+    <PreferenceDropdown onFeedback={onFeedback} preferenceName={children}>
+      <div>
+        {
+          hasImage && imageLink
+            ? <img className={styles.image} src={imageLink} alt={`Image of ${children}`} onError={() => setHasImage(false)} />
+            : <div className={styles.imagePlaceholder}>{children.substring(0, 1)}</div>}
         <div>
-          <img src={imageLink} alt={`Image of ${children}`} />
-          <div>
-            {amount}<br />
-            {children}
-            {additionalInfo && <><br />({additionalInfo}.)</>}
-          </div>
+          {amount}<br />
+          {children}
+          {additionalInfo && <><br />({additionalInfo}.)</>}
         </div>
-      </Trigger>
-      <Portal>
-        <Content className={styles.DropdownMenuContent} sideOffset={5}>
-          <Label className={styles.DropdownMenuLabel}>Help me recommending your favorite food :)</Label>
-          <Item className={styles.DropdownMenuItem} onClick={onFeedback}>
-            <IconCheck /> <span>I don't like {children}.</span>
-          </Item>
-          <Item className={styles.DropdownMenuItem} onClick={onFeedback}>
-            <IconX /> <span>{children} is yummy!</span>
-          </Item>
-          <Arrow className={styles.DropdownMenuArrow} />
-        </Content>
-      </Portal>
-    </Root>
+      </div>
+    </PreferenceDropdown>
   </li>;
 }

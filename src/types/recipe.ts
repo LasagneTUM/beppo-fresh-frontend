@@ -10,4 +10,6 @@ export interface Recipe {
   prepTime: number;
   tags: Tag[];
   nutrition: Nutrition;
+  websiteURL: string;
+  ingredients: Tag[];
 }

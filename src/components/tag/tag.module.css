@@ -1,0 +1,8 @@
+.tag {
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.tag:hover {
+  background-color: var(--border-gray);
+}
