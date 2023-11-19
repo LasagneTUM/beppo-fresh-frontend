@@ -46,11 +46,11 @@ export default function InteractiveList() {
     const parsedForBackend: PreferenceUpdate["preference_updates"] = [
       {
         preference: options.first_option.name,
-        preference_change: (3 - selectedValue),
+        preference_change: 3 - selectedValue,
       },
       {
         preference: options.second_option.name,
-        preference_change: (selectedValue - 3),
+        preference_change: selectedValue - 3,
       },
     ];
 
@@ -68,7 +68,10 @@ export default function InteractiveList() {
       </p>
       {/* <Button onClick={() => setRecipes(shuffleArray([...recipes]))}>Shuffle</Button> */}
       <BeppoQuestions onSelectionDone={onBeppoSelection} />
-      <Gallery recipes={recipes ?? []} loading={recipes === null} />
+      <Gallery
+        recipes={(recipes ?? []).slice(0, 30)}
+        loading={recipes === null}
+      />
     </div>
   );
 }
