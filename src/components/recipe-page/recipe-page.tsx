@@ -12,7 +12,7 @@ import {
   Viewport
 } from '@radix-ui/react-toast';
 import { useState } from 'react';
-// import { useRecipe } from '../../network/useRecipe';
+import { useRecipe } from '../../network/useRecipe';
 import { Navigate } from 'react-router';
 import { Tag } from '../tag/tag';
 
@@ -22,7 +22,7 @@ export function RecipePage() {
     setOpen(true);
   };
 
-  // const recipe = useRecipe();
+  const recipe = useRecipe();
 
   const [goHome, setGoHome] = useState(false);
   if (goHome) {
@@ -120,7 +120,7 @@ export function RecipePage() {
         <span>I've improved my recommendations for you.</span>
       </Description>
       <Action className={styles.ToastAction} asChild altText="Go home">
-        <Button onClick={() => setGoHome(true)}>Show me</Button>
+        <Button onClick={() => setGoHome(true)} variant='small'>Show me</Button>
       </Action>
     </Root>
     <Viewport className={styles.ToastViewport} />

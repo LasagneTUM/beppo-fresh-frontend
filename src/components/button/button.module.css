@@ -14,10 +14,15 @@
 
 .secondary {
   background-color: transparent;
-  border: 2px solid var(--fg-green);
+  border: 1px solid var(--fg-green);
   color: var(--fg-green);
 }
 
 .secondary:hover {
   background-color: var(--fg-light-green);
+}
+
+.small {
+  height: 32px;
+  font-size: 14px;
 }
