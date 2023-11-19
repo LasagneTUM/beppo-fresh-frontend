@@ -46,11 +46,11 @@ export default function InteractiveList() {
     const parsedForBackend: PreferenceUpdate["preference_updates"] = [
       {
         preference: options.first_option.name,
-        preference_change: (3 - selectedValue),
+        preference_change: 3 - selectedValue,
       },
       {
         preference: options.second_option.name,
-        preference_change: (selectedValue - 3),
+        preference_change: selectedValue - 3,
       },
     ];
 
@@ -61,14 +61,16 @@ export default function InteractiveList() {
     <div className={styles.container}>
       <h1 className={styles.title}>Recipe finder</h1>
       <p className={styles.description}>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-        clita kasd gubergren
+        What do you want to eat next week? Discover meals from all around the
+        world. If you answer some questions about your preferences you might
+        find some hidden gems for you.
       </p>
       {/* <Button onClick={() => setRecipes(shuffleArray([...recipes]))}>Shuffle</Button> */}
       <BeppoQuestions onSelectionDone={onBeppoSelection} />
-      <Gallery recipes={recipes ?? []} loading={recipes === null} />
+      <Gallery
+        recipes={(recipes ?? []).slice(0, 30)}
+        loading={recipes === null}
+      />
     </div>
   );
 }
