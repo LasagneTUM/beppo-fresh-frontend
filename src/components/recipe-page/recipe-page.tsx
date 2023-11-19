@@ -12,7 +12,7 @@ import {
   Viewport
 } from '@radix-ui/react-toast';
 import { useState } from 'react';
-import { useRecipe } from '../../network/useRecipe';
+// import { useRecipe } from '../../network/useRecipe';
 import { Navigate } from 'react-router';
 import { Tag } from '../tag/tag';
 
@@ -22,7 +22,7 @@ export function RecipePage() {
     setOpen(true);
   };
 
-  const recipe = useRecipe();
+  // const recipe = useRecipe();
 
   const [goHome, setGoHome] = useState(false);
   if (goHome) {

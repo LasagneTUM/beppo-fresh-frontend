@@ -32,9 +32,11 @@ export function BeppoQuestions({ onSelectionDone }: BeppoQuestionsProps) {
     options[optionIndex] || loadingOptions;
 
   const handleSelection = (n: number) => {
-    setOptionIndex((i) => i + 1);
+    setOptionIndex((i) => (++i >= options.length ? 0 : i));
     onSelectionDone({ first_option, second_option }, n);
   };
+
+  const loading = options[optionIndex] == null;
 
   return (
     <div className={styles.beppoQuestions}>
@@ -56,16 +58,25 @@ export function BeppoQuestions({ onSelectionDone }: BeppoQuestionsProps) {
         </div>
 
         <div className={styles.options}>
-          <button onClick={() => handleSelection(1)}>
+          <button disabled={loading} onClick={() => handleSelection(1)}>
             <img
               src={first_option.imageLink}
               alt={`Preference: ${first_option.name}`}
             />
           </button>
-          <button onClick={() => handleSelection(2)}></button>
-          <button onClick={() => handleSelection(3)}></button>
-          <button onClick={() => handleSelection(4)}></button>
-          <button onClick={() => handleSelection(5)}>
+          <button
+            disabled={loading}
+            onClick={() => handleSelection(2)}
+          ></button>
+          <button
+            disabled={loading}
+            onClick={() => handleSelection(3)}
+          ></button>
+          <button
+            disabled={loading}
+            onClick={() => handleSelection(4)}
+          ></button>
+          <button disabled={loading} onClick={() => handleSelection(5)}>
             <img
               src={second_option.imageLink}
               alt={`Preference: ${second_option.name}`}
@@ -75,7 +86,7 @@ export function BeppoQuestions({ onSelectionDone }: BeppoQuestionsProps) {
           <span
             className={classNames(styles.textSecondary, styles.optionCenterCol)}
           >
-            Neutral
+            {!loading && "Neutral"}
           </span>
           <span
             className={classNames(styles.textSecondary, styles.optionLastCol)}

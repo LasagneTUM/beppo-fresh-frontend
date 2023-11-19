@@ -113,6 +113,10 @@
   border-left-width: 0;
 }
 
+.options button:disabled {
+  cursor: default;
+}
+
 .options button:first-of-type {
   border-left-width: 2px;
   border-top-left-radius: 4px;

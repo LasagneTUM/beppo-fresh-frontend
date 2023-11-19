@@ -12,10 +12,26 @@
   padding-right: 16px;
 }
 
-.logoutBtn {
-  min-width: 110px;
+.logoutBtn,
+.logoutIcon {
   position: absolute;
   right: 16px;
+}
+
+.logoutBtn {
+  min-width: 110px;
+  display: none;
+}
+
+.logoutIcon {
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.logoutIcon:hover {
+  background: var(--bg-beige);
+  color: var(--fg-green);
 }
 
 .logo {
@@ -39,7 +55,12 @@
     justify-content: space-between;
   }
 
-  .menuItem {
+  .menuItem,
+  .logoutBtn {
     display: inline;
+  }
+
+  .logoutIcon {
+    display: none;
   }
 }
