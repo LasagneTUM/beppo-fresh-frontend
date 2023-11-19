@@ -32,7 +32,7 @@ export function BeppoQuestions({ onSelectionDone }: BeppoQuestionsProps) {
     options[optionIndex] || loadingOptions;
 
   const handleSelection = (n: number) => {
-    setOptionIndex((i) => i + 1);
+    setOptionIndex((i) => (++i >= options.length ? 0 : i));
     onSelectionDone({ first_option, second_option }, n);
   };
 
